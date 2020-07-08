@@ -85,10 +85,9 @@ class ListaPessoas(Resource):
 
 class ListaAtividades(Resource):
 
-
     def get(self):
         atividades = Atividades.query.all()
-        response = [{'id': i.id, 'nome': i.nome, 'pessoa': i.pessoa.nome} for i in atividades]
+        response = [{'id': i.id, 'nome': i.nome, 'pessoa': i.pessoa_id} for i in atividades]
         return response
 
     def post(self):

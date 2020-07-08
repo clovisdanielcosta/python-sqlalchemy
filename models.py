@@ -35,7 +35,7 @@ class Pessoas(Base):
 class Atividades(Base):
     __tablename__ = 'atividades'
     id = Column(Integer, primary_key=True)
-    nome = Column(String(80))
+    nome = Column(String(80), index=True)
     pessoa_id = Column(Integer, ForeignKey('pessoas.id'))
     pessoa = relationship('Pessoas')
 
